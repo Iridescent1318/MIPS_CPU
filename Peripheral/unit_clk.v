@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2019/05/09 15:18:54
-// Design Name: 
-// Module Name: unit_clk
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module unit_clk(
     input sysclk,
@@ -32,7 +12,8 @@ initial
 begin
     u_clk_1 = 0;
     state = 28'b0000_0000_0000_0000_0000_0000_0000;
-    divide = 28'b01011_1110_1011_1100_0010_0000_000; //ratio = 100,000,000, frequency = 1Hz
+    //divide = 28'b1011_1110_1011_1100_0010_0000_0000; //ratio = 200,000,000, frequency = 0.5Hz ?
+    divide = 28'b0000010_1111_1010_1111_0000_1000_0; // ratio = 6,250,000, frequency = 16Hz
 end
 always@ (posedge sysclk)
 begin
